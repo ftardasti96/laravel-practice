@@ -66,13 +66,16 @@
     </head>
     <body>
             @include('inc/navbar')
+
         <div class="flex-center position-ref full-height">
 
             <div class="content">
                 <div class="title m-b-md">
                     فروم 
                 </div>
-
+                <div class="float-left">
+                        <img src="{{URL::asset('../img/1221448.png')}}" alt="profile Pic" height="200" width="200">
+                </div>
                 
             </div>
         </div>
