@@ -9,13 +9,13 @@
         </div>
         <div class="form-group">
                 {{ Form::label('body', 'Body') }}
-                {{ Form::textarea('body','',['class' => 'form-control', 'placeholder' => 'write your text'])}}
+                {{ Form::textarea('body','',['class' => 'form-control', 'id' => 'summary-ckeditor', 'placeholder' => 'write your text'])}}
         </div>
         {{ Form::submit("Submit",['class' => 'btn btn-success']) }}
         {{ Form::close() }}      
 </div>
-{{-- <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace( 'summary-ckeditor' );
-</script> --}}
+</script>
 @endsection
