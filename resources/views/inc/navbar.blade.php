@@ -2,19 +2,19 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="/firstApp/public">home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/firstApp/public">خانه <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/firstApp/public/about">About ME</a>
+              <a class="nav-link" href="/firstApp/public/about">درباره‌ی من</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/firstApp/public/service">Services</a>
+              <a class="nav-link" href="/firstApp/public/service">خدمات</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/firstApp/public/post">Blog</a>
+              <a class="nav-link" href="/firstApp/public/post">بلاگ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/firstApp/public/post/create">Create</a>
+                <a class="nav-link" href="/firstApp/public/post/create">ایجاد پست</a>
               </li>
           </ul>
           <a class="navbar-brand" href="{{ url('/') }}">
@@ -34,14 +34,14 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('عضویت') }}</a>
+                </li>
+            @endif
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('ورود') }}</a>
                     </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
