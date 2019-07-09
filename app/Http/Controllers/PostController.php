@@ -8,6 +8,15 @@ use App\Post;
 class PostController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth' , ['except' => ['index','show']]);
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -75,6 +84,9 @@ class PostController extends Controller
     public function edit($id)
     {
         $posts = Post::find($id);
+        if(auth()->user()->id != $posts->id){
+            return redirect('posts')->with('error','no access!');
+        }
         return view('posts/edit')->with('posts',$posts);
     }
 
@@ -110,6 +122,9 @@ class PostController extends Controller
     {
         $posts = Post::find($id);
         // return Post::find($id);
+        if(auth()->user()->id != $posts->id){
+            return redirect('posts')->with('error','no access!');
+        }
         $posts->delete();
         return redirect('post')->with('success','Post Deleted');
     }
