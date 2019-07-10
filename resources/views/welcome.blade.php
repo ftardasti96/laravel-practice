@@ -57,7 +57,12 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            img {
+                width: 10vw;
+                position: absolute;
+                top: 10%;
+                right: 10%;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -73,11 +78,8 @@
                 <div class="title m-b-md">
                     فروم 
                 </div>
-                <div class="float-left">
-                        <img src="{{URL::asset('../img/1221448.png')}}" alt="profile Pic" height="200" width="200">
-                </div>
-                
-            </div>
+            </div>     
+                <img src="img/1221448.png" alt="no img">
         </div>
     </body>
 </html>
